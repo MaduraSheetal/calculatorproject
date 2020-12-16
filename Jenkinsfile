@@ -8,7 +8,7 @@ pipeline {
         stage("build") {
             steps {
                 echo 'building the application...'
-				sh "mvn -B verify"
+				sh "mvn -B clean"
             }
         }
 
@@ -25,4 +25,20 @@ pipeline {
             }
         }
     }
+	post{
+		always{
+			echo 'this will always run'
+		}
+		success{
+			echo 'this will run only if successfull'
+		}
+		failure{
+			echo 'This will run only if failed'
+		}
+		unstable{
+			echo 'This will run only if the run was unstable'
+		}
+		changed{
+			echo 'This will run only if the state changed'
+		}
 }
