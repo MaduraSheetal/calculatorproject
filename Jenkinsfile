@@ -28,6 +28,7 @@ pipeline {
 	post{
 		always{
 			echo 'this will always run'
+			junit '**/target/surefire-reports/TEST-*.xml'
 		}
 		success{
 			echo 'this will run only if successfull'
