@@ -3,6 +3,7 @@ pipeline {
 	tools{
 		maven 'maven'
 	}	
+	options { timestamps () }
 
     stages {
         stage("build") {
