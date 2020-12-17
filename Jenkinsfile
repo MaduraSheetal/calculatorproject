@@ -8,14 +8,14 @@ pipeline {
         stage("build") {
             steps {
                 echo 'building the application...'
-				sh "mvn -B clean"
+				sh "mvn -Dmaven.test.failure.ignore=true clean compile"
             }
         }
 
         stage("test") {
             steps {
                 echo 'testing the application...'
-				sh "mvn integration-test"
+				sh "mvn -Dmaven.test.failure.ignore=true test"
             }
         }
         
