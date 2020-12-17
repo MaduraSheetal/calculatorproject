@@ -1,9 +1,9 @@
 pipeline {
 
-    agent {label 'remote2'}
+    agent {label 'remote1'}
 
     tools {
-        maven 'M3'
+        maven 'maven'
 
     }
     options { timestamps () }
